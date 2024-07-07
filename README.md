@@ -12,15 +12,15 @@ This repository contains the official PyTorch implementation for Visual Prompt T
 ## VPT Setup
 ## Environment settings
 
-1)See `env_setup.sh`
+1) Use 'environment.yml` to setup packages in conda env
 
-2)Initialize 4 env variables (model_root,data_path,output_dir,seed)
+2) Initialize 4 env variables (model_root,data_path,output_dir,seed)
 
 Current code uses imagenet pretrained-model and CUB dataset as values for model_root, and data_path respectively. 
 model_root=/shared/home/v_nishanth_artham/local_scratch/vpt/src/models
 data_path=/shared/home/v_nishanth_artham/local_scratch/vpt/src/data/CUB_prompt
 
-Examples of output_dir and seed :-
+Examples of output_dir and seed initialisation:-
 - output_dir=/shared/home/v_nishanth_artham/local_scratch/_output/cub_prompt/deep/${seed}_prompt/
 - seed=0
 
