@@ -22,6 +22,9 @@ python train.py         --config-file configs/prompt/cub.yaml         MODEL.TYPE
 ### Tuning
 python tune_fgvc.py     --train-type "prompt"     --config-file configs/prompt/cub.yaml     MODEL.TYPE "vit"     DATA.BATCH_SIZE "128"     MODEL.PROMPT.DEEP "True"     MODEL.PROMPT.DROPOUT "0.1"     MODEL.PROMPT.NUM_TOKENS "0"     DATA.FEATURE "sup_vitb16_imagenet21k"  OUTPUT_DIR "${output_dir}" DATA.NAME "CUB"
 
+### Attention Token
+
+To use baseline VPT pass `INCLUDE_ATTENTION_TOKEN`=`False` in `src/configs/config.py` else pass `True` to use an additional token while classifying classes.
 
 ## Structure of the this repo (key files are marked with 👉):
 
