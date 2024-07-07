@@ -8,9 +8,30 @@ This repository contains the official PyTorch implementation for Visual Prompt T
 
 ![vpt_teaser](https://github.com/KMnP/vpt/blob/main/imgs/teaser.png)
 
+
+## VPT Setup
 ## Environment settings
 
-See `env_setup.sh`
+1)See `env_setup.sh`
+
+2)Initialize 4 env variables (model_root,data_path,output_dir,seed)
+
+Current code uses imagenet pretrained-model and CUB dataset as values for model_root, and data_path respectively. 
+model_root=/shared/home/v_nishanth_artham/local_scratch/vpt/src/models
+data_path=/shared/home/v_nishanth_artham/local_scratch/vpt/src/data/CUB_prompt
+
+Examples of output_dir and seed :-
+- output_dir=/shared/home/v_nishanth_artham/local_scratch/_output/cub_prompt/deep/${seed}_prompt/
+- seed=0
+
+## Running VPT
+
+### Training 
+python train.py         --config-file configs/prompt/cub.yaml         MODEL.TYPE "vit"         DATA.BATCH_SIZE "64"         MODEL.TRANSFER_TYPE "prompt"       DATA.FEATURE "sup_vitb16_imagenet21k"         DATA.NAME "CUB"           SOLVER.BASE_LR "0.5"         SOLVER.WEIGHT_DECAY "0.001"         SEED ${seed}
+
+### Tuning
+python tune_fgvc.py     --train-type "prompt"     --config-file configs/prompt/cub.yaml     MODEL.TYPE "vit"     DATA.BATCH_SIZE "128"     MODEL.PROMPT.DEEP "True"     MODEL.PROMPT.DROPOUT "0.1"     MODEL.PROMPT.NUM_TOKENS "0"     DATA.FEATURE "sup_vitb16_imagenet21k"  OUTPUT_DIR "${output_dir}" DATA.NAME "CUB"
+
 
 ## Structure of the this repo (key files are marked with 👉):
 
