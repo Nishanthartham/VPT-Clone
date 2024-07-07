@@ -1,15 +1,5 @@
-# Visual Prompt Tuning 
+# Visual Prompt Tuning Setup
 
-https://arxiv.org/abs/2203.12119 
-
-------
-
-This repository contains the official PyTorch implementation for Visual Prompt Tuning.
-
-![vpt_teaser](https://github.com/KMnP/vpt/blob/main/imgs/teaser.png)
-
-
-## VPT Setup
 ## Environment settings
 
 1) Use 'environment.yml` to setup packages in conda env
