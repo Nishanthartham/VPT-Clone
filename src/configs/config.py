@@ -12,7 +12,7 @@ _C = CfgNode()
 
 
 _C.DBG = False
-_C.OUTPUT_DIR = "output_dir=/shared/home/v_nishanth_artham/local_scratch/_output/test/seed"
+_C.OUTPUT_DIR = "/shared/home/v_nishanth_artham/local_scratch/_output/test/seed"
 _C.RUN_N_TIMES = 5
 # Perform benchmarking to select the fastest CUDNN algorithms to use
 # Note that this may increase the memory usage and will likely not result
